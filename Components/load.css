@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+/*body{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    min-height: 100vh;*/
+/*    background: #000022;*/
+/*}*/
+
+.load_bar{
+    margin-top: 80px;
+    width:300px;
+    height:10px;
+    background-color: white;
+    mask-image: linear-gradient(to left, white, white);
+    /*-webkit-box-reflect: below 1px linear-gradient(transparent,#0005,white,white);*/
+}
+
+    /*box-reflect: below 1px linear-gradient(transparent, #0005);*/
+
+
+.load_bar::before
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,#ffff00,#fb0094,#00ff00,#0000ff,#ffff00,#fb0094,#00ff00,#0000ff);
+    animation: animate 20s linear infinite;
+    background-size: 500%;
+}
+
+
+.load_bar::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,#ffff00,#fb0094,#00ff00,#0000ff,#ffff00,#fb0094,#00ff00,#0000ff,#ffff00,#fb0094,#00ff00,#0000ff);
+    animation: animate 20s linear infinite;
+    background-size: 500%;
+    filter:blur(20px);
+}
+
+@keyframes animate
+{
+    0%
+    {
+        background-position:0 0;
+    }
+
+    0%
+    {
+        background-position:500% 0;
+    }
+}
